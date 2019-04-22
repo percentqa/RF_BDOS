@@ -1,0 +1,73 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          zykey/zywj.txt
+
+*** Test Cases ***
+sousuo
+    Open Browser    http://bdosdowell.com    Chrome
+    sleep    0
+    Maximize Browser window
+    Input Text    id=username    superadmin
+    Input password    id=password    jupiter123
+    Input Text    id=authcode    1
+    Click Button    id=login
+    sleep    3
+    Click Element    XPath=//*[@id="header"]/ul/li[6]/a/span
+    Sleep    5
+    Input Text    XPath=//*[@id="body"]/div/div[1]/input    测试
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+    sleep    3
+    Clear Element Text    XPath=//*[@id="body"]/div/div[1]/input
+    sleep    2
+    Input Text    XPath=//*[@id="body"]/div/div[1]/input    ff
+    sleep    2
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+    press key    XPath=//*[@id="body"]/div/div[1]/input    \\8
+    sleep    2
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+    sleep    2
+    press key    XPath=//*[@id="body"]/div/div[1]/input    \\8
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+
+bianji
+    open Browser    http://bdosdowell.com    Chrome
+    sleep    0
+    Maximize Browser window
+    Input Text    id=username    superadmin
+    Input password    id=password    jupiter123
+    Input Text    id=authcode    1
+    Click Button    id=login    \    ##点击登录
+    sleep    2
+    Click Element    XPath=//*[@id="header"]/ul/li[6]/a/span    \    ##点击质量管理
+    Sleep    2
+    Input Text    XPath=//*[@id="body"]/div/div[1]/input    cs001
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+    sleep    3
+    Click Element    XPath=//*[@id="body"]/div/div[2]/div/div[1]/table/tbody/tr/td[7]/div/a[1]    \    ##点击编辑
+    sleep    2
+    Double Click Element    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    ##双击文本框
+    press key    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    \\8    ##删除内容
+    sleep    2
+    Input Text    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    text1    ##重新输入
+    sleep    2
+    Double Click Element    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input
+    sleep    1
+    press key    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    \\8
+    sleep    2
+    Input TEXT    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    text2
+    sleep    2
+    Click Element    xpath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/div/button[1]
+
+实验
+    登录
+    Click Element    XPath=//*[@id="header"]/ul/li[6]/a/span    ##点击智联管理
+    Sleep    3
+    Input Text    XPath=//*[@id="body"]/div/div[1]/input    cs001
+    Click Button    XPath=//*[@id="body"]/div/div[1]/button
+    sleep    3
+    Click Element    XPath=//*[@id="body"]/div/div[2]/div/div[1]/table/tbody/tr/td[7]/div/a[1]    ##点击编辑
+    sleep    2
+    Double Click Element    xpath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input
+    sleep    2
+    press key    XPath=/html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    \\8
+    sleep    2

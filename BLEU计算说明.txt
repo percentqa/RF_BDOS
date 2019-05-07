@@ -1,0 +1,30 @@
+﻿1.python 版本3.6+
+2.安装第三方库：jieba, tensor2tensor
+3.中文BLEU计算：
+  1）调用zh_segment.py文件对中文tokenize，便于BLEU计算；参数，-i为中文文件路径，-o为tokenize后输出文件 
+     命令如：python /home/zh_segment.py -i /home/zh.txt -o /home/zh_t.txt
+  2）调用tensor2tensor命令计算, 参数，reference标准译文， translation翻译引擎翻译的结果
+     命令如：t2t-bleu --reference=/home/trans_zh_t.txt --translation=/home/zh_t.txt
+4.英文、俄文等非中文BLEU计算：
+  同中文BLEU计算 2），直接调用同t2t-bleu
+
+5.BLEU参考值（英俄、英中）见网站（浮动范围10分）：http://matrix.statmt.org/?metric%5Bid%5D=5&mode=best
+  其他：（浮动范围5分）
+    军工BLEU参考值：36
+    中俄BLEU参考值：36
+    俄中BLEU参考值：50
+
+t2t-bleu --reference=/t2t/Test_zh_trans.txt --translation=/t2t/Test_zh_t.txt
+
+t2t-bleu --reference=C:\Users\yuxuan.zhou\Desktop\DT_测试\DT_测试\Test_zh_trans.txt --translation=C:\Users\yuxuan.zhou\Desktop\DT_测试\DT_测试\Test_zh_t.txt
+
+wget --no-check-certificate https://pypi.python.org/packages/source/p/pip/pip-8.0.2.tar.gz#md5=3a73c4188f8dbad6a1e6f6d44d117eeb
+ 
+
+tar -zxvf pip-8.0.2.tar.gz 
+cd pip-8.0.2 
+python setup.py build 
+sudo python setup.py install
+
+conda create -n  py37 python==3.7
+

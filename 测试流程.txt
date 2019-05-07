@@ -23,7 +23,7 @@ Library           OperatingSystem
 新增
     [Arguments]    ${xpath}    ${num}    ${name}
     [Documentation]    选择tab页面
-    Click Element    Xpath =${xpath}
+    Click Element    Xpath =${xpath} #定位内容
     Click Element    Xpath = /html/body/div[3]/div/div[2]/div/div/div[1]
     Input Text    Xpath = /html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[1]/div[2]/input    ${num}
     Input Text    Xpath = /html/body/div[3]/div/div[2]/div/div/div[2]/div/form/div[2]/div[2]/input    ${name}

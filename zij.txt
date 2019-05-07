@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${caxun}          xpath=//*[@id="body"]/div/div[1]/button    # 查询
+
+*** Keywords ***
+denglu
+    Open Browser    http://bdosdowell.com    Chrome
+    sleep    0
+    Maximize Browser window
+    Input Text    id=username    superadmin
+    Input password    id=password    jupiter123
+    Input Text    id=authcode    1
+    Click Button    id=login
